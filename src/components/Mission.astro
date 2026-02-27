@@ -1,0 +1,118 @@
+---
+const values = [
+    {
+        title: "Quality Care & Best Practices",
+        desc: "We strive to provide exceptional early care, guided by best practices to support families in offering a safe and nurturing environment.",
+        icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04c0 4.833 1.277 9.473 3.618 13.016A11.955 11.955 0 0012 21.056a11.955 11.955 0 005.618-3.04c2.341-3.543 3.618-8.183 3.618-13.016z",
+    },
+    {
+        title: "Positive Relationships & Diversity",
+        desc: "Our program promotes healthy peer and adult interactions, fostering respect and inclusion for all backgrounds.",
+        icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
+    },
+    {
+        title: "Active Learning & Growth",
+        desc: "We offer resources to help children become engaged learners, encouraging curiosity and growth at every stage.",
+        icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    },
+];
+---
+
+<section class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            {/* Visual Side */}
+            <div class="w-full lg:w-1/2 relative lg:order-2">
+                <div
+                    class="relative bg-brand-primary/5 p-8 sm:p-12 rounded-[3.5rem] overflow-hidden"
+                >
+                    <div
+                        class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl"
+                    >
+                    </div>
+
+                    <div class="space-y-6 relative z-10">
+                        <div
+                            class="bg-white p-8 rounded-3xl shadow-xl shadow-brand-primary/5 border border-brand-primary/5 transform -rotate-2 hover:rotate-0 transition-transform duration-500"
+                        >
+                            <h4
+                                class="text-xl font-black text-brand-primary mb-2 italic"
+                            >
+                                Our Mission
+                            </h4>
+                            <p
+                                class="text-slate-700 leading-relaxed font-medium"
+                            >
+                                We are committed to delivering high-quality
+                                early care that supports families and fosters a
+                                safe, nurturing environment.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white p-8 rounded-3xl shadow-xl shadow-brand-primary/5 border border-brand-primary/5 transform rotate-2 hover:rotate-0 transition-transform duration-500 delay-100 lg:translate-x-8"
+                        >
+                            <p
+                                class="text-slate-700 leading-relaxed font-medium"
+                            >
+                                Our program emphasizes best practices,
+                                encourages positive interactions, and celebrates
+                                diversity to help children thrive as active,
+                                knowledgeable learners.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Content Side */}
+            <div class="w-full lg:w-1/2 lg:order-1">
+                <div class="space-y-4 mb-12">
+                    <span
+                        class="text-brand-accent font-black uppercase tracking-[0.2em] text-xs"
+                        >Foundation & Future</span
+                    >
+                    <h2
+                        class="text-4xl md:text-5xl font-black font-heading text-slate-950 leading-tight tracking-tight"
+                    >
+                        Our Mission & <span class="text-brand-primary"
+                            >Core Values</span
+                        >
+                    </h2>
+                </div>
+
+                <div class="space-y-10">
+                    {
+                        values.map((value) => (
+                            <div class="flex gap-6 group">
+                                <div class="flex-shrink-0 w-12 h-12 bg-brand-card text-brand-primary rounded-xl flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                                    <svg
+                                        class="w-6 h-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d={value.icon}
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="space-y-2">
+                                    <h3 class="text-xl font-black text-slate-950 tracking-tight">
+                                        {value.title}
+                                    </h3>
+                                    <p class="text-slate-600 leading-relaxed font-medium">
+                                        {value.desc}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

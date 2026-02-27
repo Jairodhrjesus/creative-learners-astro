@@ -1,0 +1,37 @@
+# Creative Learners Child Care - Pleasanton, CA
+
+Premium childcare and early education center in Pleasanton, California.
+
+## Purpose
+This website serves as the digital face of Creative Learners Child Care, highlighting our nurturing environment, research-based curriculum, and commitment to school readiness for children from 3 months to 5 years old.
+
+## Key Programs
+- **Infant Program**: 3 to 24 Months. Focused on sensory exploration and individualized care.
+- **Toddler Program**: 18 to 36 Months. Promoting independence and social skills.
+- **Preschool Program**: 3 to 4 Years. Igniting curiosity and early literacy.
+- **Pre-K Program**: 4 to 5 Years. Bridging the gap to Kindergarten success.
+
+## Core Values
+- **Security & Safety**: High standards of safety and licensed caregivers.
+- **Active Learning**: Hands-on exploration in science, math, and arts.
+- **Community & Diversity**: A welcoming environment for families of all backgrounds.
+- **Family Collaboration**: Strong partnership between teachers and parents.
+
+## Navigation
+- **Home**: Overview of our philosophy, programs, and testimonials.
+- **Programs**: Detailed pages for each age group (/programs/infant, /programs/toddler, /programs/preschool, /programs/pre-k).
+- **Blog**: Insights into early childhood education and community updates (/blog).
+- **Contact**: Facility information and tour scheduling (/contact).
+
+## Contact Information
+- **Location**: 4300 Mirador Dr, Pleasanton, CA 94566
+- **Phone**: (925) 425-9500
+- **Hours**: Mon-Fri, 7:00 AM – 6:00 PM
+
+## Technology Stack
+- **Framework**: Astro
+- **Styling**: Tailwind CSS v4
+- **Aesthetics**: Premium, modern, research-based design with large rounded corners and soft crema-green palette.
+
+---
+*Created for LLM consumption to facilitate project understanding.*

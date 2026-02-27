@@ -1,0 +1,210 @@
+---
+const mainFeatures = [
+    {
+        title: "Certified Quality Care",
+        desc: "Dedicated to providing safe, nurturing, and developmentally focused care for every child.",
+        icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04c0 4.833 1.277 9.473 3.618 13.016A11.955 11.955 0 0012 21.056a11.955 11.955 0 005.618-3.04c2.341-3.543 3.618-8.183 3.618-13.016z",
+    },
+    {
+        title: "Comprehensive Care",
+        desc: "Specialized care for children ages 3 months to pre-kindergarten, fostering growth and learning at every stage.",
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+    },
+    {
+        title: "High Standards of Safety",
+        desc: "Staffed by licensed caregivers trained in first aid, CPR, and preventative health practices.",
+        icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
+    },
+    {
+        title: "Tailored Curriculum",
+        desc: "Customized to meet the unique needs of each child, ensuring appropriate support and challenges.",
+        icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
+    },
+    {
+        title: "Daily Nutrition",
+        desc: "Nutritious breakfast and snacks served daily, promoting healthy habits from an early age.",
+        icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
+    },
+    {
+        title: "Engaging Activities",
+        desc: "Creativity, exploration, and hands-on learning, making every day an adventure for your child.",
+        icon: "M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+    },
+];
+
+const highlights = [
+    "Care for children 3 months to pre-kindergarten",
+    "Preschool and Pre-K programs focus on School readiness",
+    "Developmentally appropriate practices",
+    "Responsible licensed caregivers",
+    "Current First Aid, CPR, and Preventative health training",
+    "Organized and structured learning",
+];
+---
+
+<section class="py-24 bg-brand-card/20">
+    <div class="container mx-auto px-6">
+        {/* Header */}
+        <div class="max-w-3xl mb-20">
+            <h2
+                class="text-4xl md:text-5xl font-black font-heading text-slate-950 mb-6 leading-tight"
+            >
+                What to Expect from <br />
+                <span class="text-brand-primary">Creative Learners</span> Child Care
+            </h2>
+            <p class="text-xl text-slate-600 font-medium leading-relaxed">
+                We provide exceptional care for children from 3 months to
+                pre-kindergarten, ensuring a nurturing and safe environment that
+                promotes school readiness and individual development.
+            </p>
+        </div>
+
+        {/* Main Features Grid */}
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+            {
+                mainFeatures.map((feature) => (
+                    <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 group hover:shadow-xl hover:-translate-y-2 transition-all">
+                        <div class="w-14 h-14 bg-brand-card text-brand-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-primary group-hover:text-white transition-all">
+                            <svg
+                                class="w-8 h-8"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    d={feature.icon}
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading text-slate-950 mb-4">
+                            {feature.title}
+                        </h3>
+                        <p class="text-slate-600 font-medium leading-relaxed">
+                            {feature.desc}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+
+        {/* Bottom Detailed Support Section - Redesigned for Premium Look */}
+        <div class="relative mt-8 group">
+            <div
+                class="absolute inset-0 bg-brand-primary rounded-[3.5rem] rotate-1 group-hover:rotate-0 transition-transform duration-500 -z-10 opacity-10"
+            >
+            </div>
+            <div
+                class="bg-white rounded-[3.5rem] p-10 md:p-16 border-2 border-brand-primary/10 shadow-xl overflow-hidden relative"
+            >
+                {/* Decorative background circle */}
+                <div
+                    class="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl"
+                >
+                </div>
+
+                <div
+                    class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 relative z-10"
+                >
+                    <div class="lg:w-[55%] space-y-10">
+                        <div class="space-y-6">
+                            <span
+                                class="inline-block px-4 py-1.5 bg-brand-primary/10 text-brand-primary rounded-full text-xs font-black uppercase tracking-widest"
+                            >
+                                Excellence in Education
+                            </span>
+                            <h3
+                                class="text-3xl md:text-5xl font-black font-heading leading-[1.1] text-slate-950"
+                            >
+                                Our Commitment to <br />
+                                <span
+                                    class="text-brand-primary underline decoration-brand-accent/30 decoration-8 underline-offset-4"
+                                    >Guidance</span
+                                >
+                            </h3>
+                            <p
+                                class="text-slate-600 text-lg md:text-xl leading-relaxed font-medium"
+                            >
+                                We offer ongoing support and guidance for
+                                families, creating a partnership that enhances
+                                your child’s learning journey. Our programs
+                                prepare children with essential skills for
+                                future success.
+                            </p>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-y-4 gap-x-8">
+                            {
+                                highlights.map((item) => (
+                                    <div class="flex items-start gap-3 group/item">
+                                        <div class="w-6 h-6 rounded-full bg-brand-primary flex items-center justify-center flex-shrink-0 mt-1 transition-transform group-hover/item:scale-110">
+                                            <svg
+                                                class="w-3.5 h-3.5 text-white"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="4"
+                                                    d="M5 13l4 4L19 7"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="font-bold text-sm md:text-base text-slate-800 tracking-tight leading-tight">
+                                            {item}
+                                        </span>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+
+                    <div class="lg:w-[45%]">
+                        <div class="relative">
+                            {/* The Quote Card */}
+                            <div
+                                class="bg-brand-primary p-10 md:p-12 rounded-[2.5rem] text-white shadow-2xl relative z-10"
+                            >
+                                <svg
+                                    class="w-12 h-12 text-brand-accent mb-6 opacity-50"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 6.79086 11.8079 5 14.017 5H17.017C18.1215 5 19.017 5.89543 19.017 7V15C19.017 17.2091 17.2261 19 15.017 19H14.017V21H14.017ZM5.017 21V18C5.017 16.8954 5.91243 16 7.017 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H6.017C5.46472 8 5.017 8.44772 5.017 9V12C5.017 12.5523 4.56929 13 4.017 13H2.017C1.46472 13 1.017 12.5523 1.017 12V9C1.017 6.79086 2.80786 5 5.017 5H8.017C9.12157 5 10.017 5.89543 10.017 7V15C10.017 17.2091 8.22586 19 6.017 19H5.017V21H5.017Z"
+                                    ></path>
+                                </svg>
+                                <blockquote
+                                    class="text-xl md:text-2xl font-bold italic leading-relaxed mb-8"
+                                >
+                                    "We want to work together with our families
+                                    to create a community of life-long learners,
+                                    doers, and thinkers."
+                                </blockquote>
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="h-1 w-12 bg-brand-accent rounded-full"
+                                    >
+                                    </div>
+                                    <span
+                                        class="text-sm font-black uppercase tracking-widest opacity-70"
+                                        >Our Philosophy</span
+                                    >
+                                </div>
+                            </div>
+                            {/* Background shadow/decorative element */}
+                            <div
+                                class="absolute inset-0 bg-brand-accent/20 rounded-[2.5rem] translate-x-4 translate-y-4 -z-10"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

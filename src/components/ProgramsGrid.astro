@@ -1,0 +1,123 @@
+---
+const programs = [
+    {
+        name: "Infant Program",
+        age: "3 to 24 Months",
+        desc: "A nurturing and safe setting where babies receive personalized care and sensory-rich experiences.",
+        color: "bg-blue-50",
+        text: "text-blue-600",
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+    },
+    {
+        name: "Toddler Program",
+        age: "24 to 36 Months",
+        desc: "Encouraging independence and social skills through active play and guided exploration.",
+        color: "bg-orange-50",
+        text: "text-orange-600",
+        icon: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z",
+    },
+    {
+        name: "Preschool Program",
+        age: "3 to 4 Years",
+        desc: "Focusing on cognitive growth, language development, and early literacy in a fun environment.",
+        color: "bg-green-50",
+        text: "text-green-600",
+        icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-6.364l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
+    },
+    {
+        name: "Pre-K Program",
+        age: "4 to 5 Years",
+        desc: "Comprehensive school readiness focusing on math, science, and social-emotional skills.",
+        color: "bg-purple-50",
+        text: "text-purple-600",
+        icon: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222",
+    },
+];
+---
+
+<section class="py-24 bg-white relative">
+    <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span
+                class="text-brand-accent font-black uppercase tracking-[0.2em] text-xs"
+                >Ages 3 Months – 5 Years</span
+            >
+            <h2
+                class="text-4xl md:text-5xl font-black font-heading text-slate-950 mt-4 mb-6 leading-tight"
+            >
+                Programs Tailored to <br />
+                <span class="text-brand-primary">Your Child's Stage</span>
+            </h2>
+            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                Our research-based curriculum adapts to each milestone, ensuring
+                your child receives the perfect balance of care and academic
+                challenge.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {
+                programs.map((p) => (
+                    <div class="group relative bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all flex flex-col items-center text-center overflow-hidden">
+                        {/* Decorative Background Blob */}
+                        <div
+                            class={`absolute top-0 right-0 w-32 h-32 ${p.color} rounded-full -mr-16 -mt-16 blur-3xl opacity-50 group-hover:opacity-100 transition-opacity`}
+                        />
+
+                        <div
+                            class={`w-20 h-20 ${p.color} ${p.text} rounded-3xl flex items-center justify-center mb-8 relative z-10 transition-transform group-hover:scale-110 duration-500`}
+                        >
+                            <svg
+                                class="w-10 h-10"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d={p.icon}
+                                />
+                            </svg>
+                        </div>
+
+                        <div class="relative z-10 space-y-4 flex-1">
+                            <h3 class="text-2xl font-black font-heading text-slate-950">
+                                {p.name}
+                            </h3>
+                            <span
+                                class={`inline-block px-4 py-1 rounded-full ${p.color} ${p.text} text-[10px] font-black uppercase tracking-wider`}
+                            >
+                                {p.age}
+                            </span>
+                            <p class="text-slate-500 font-medium leading-relaxed text-sm">
+                                {p.desc}
+                            </p>
+                        </div>
+
+                        <a
+                            href={`/programs/${p.name.toLowerCase().split(" ")[0]}`}
+                            class="mt-8 text-brand-primary font-bold text-sm hover:underline inline-flex items-center gap-2 group-hover:gap-3 transition-all"
+                        >
+                            Learn More
+                            <svg
+                                class="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.5"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,126 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: post,
+    }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={`${post.data.title} | Creative Learners Blog`}>
+    <main class="bg-white">
+        {/* Hero Header */}
+        <section
+            class="bg-brand-card py-20 border-b border-brand-primary/5 relative overflow-hidden"
+        >
+            <div class="absolute inset-0 bg-grid-slate-100/[0.5] -z-10"></div>
+            <div
+                class="container mx-auto px-6 relative z-10 text-center max-w-4xl"
+            >
+                <p
+                    class="text-brand-accent font-black uppercase tracking-[0.2em] text-xs mb-4"
+                >
+                    {
+                        post.data.pubDate.toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                        })
+                    }
+                </p>
+                <h1
+                    class="text-4xl md:text-6xl font-black font-heading text-slate-950 leading-[1.1] mb-8 tracking-tight"
+                >
+                    {post.data.title}
+                </h1>
+                <div class="flex items-center justify-center gap-4">
+                    <div
+                        class="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-brand-primary/20"
+                    >
+                        CL
+                    </div>
+                    <div class="text-left">
+                        <p class="text-slate-900 font-black text-sm">
+                            Creative Learners Team
+                        </p>
+                        <p
+                            class="text-slate-500 text-xs font-bold uppercase tracking-widest"
+                        >
+                            Early Education Experts
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Blog Content */}
+        <article class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto">
+                    <div
+                        class="prose prose-slate prose-xl max-w-none
+						prose-headings:font-black prose-headings:font-heading prose-headings:text-slate-950
+						prose-p:text-slate-600 prose-p:leading-relaxed
+						prose-li:text-slate-600 prose-li:font-medium
+						prose-strong:text-slate-950 prose-strong:font-black
+						prose-a:text-brand-primary prose-a:font-bold hover:prose-a:text-brand-dark
+						prose-img:rounded-[2.5rem] prose-img:shadow-2xl prose-img:border-4 prose-img:border-white"
+                    >
+                        <Content />
+                    </div>
+
+                    <div class="mt-20 pt-10 border-t border-slate-100">
+                        <div
+                            class="bg-brand-card p-10 rounded-[2.5rem] border border-brand-primary/10 flex flex-col md:flex-row items-center gap-8"
+                        >
+                            <div
+                                class="flex-1 space-y-4 text-center md:text-left"
+                            >
+                                <h3 class="text-2xl font-black text-slate-950">
+                                    Enjoyed this article?
+                                </h3>
+                                <p class="text-slate-600 font-medium">
+                                    Interested in seeing our programs in action?
+                                    Schedule a private tour of our Pleasanton
+                                    facility today.
+                                </p>
+                            </div>
+                            <a
+                                href="/contact"
+                                class="bg-brand-primary text-white px-8 py-4 rounded-full font-black hover:bg-brand-dark transition-all shadow-xl shadow-brand-primary/20 whitespace-nowrap"
+                            >
+                                Schedule a Tour
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+</Layout>
+
+<style is:global>
+    @reference "../../styles/global.css";
+
+    /* Custom Tailwind Prose Overrides for a more premium look */
+    .prose h2 {
+        @apply text-3xl mt-16 mb-8;
+    }
+    .prose ul {
+        @apply my-8 space-y-3;
+    }
+    .prose li {
+        @apply relative pl-8;
+    }
+    .prose li::before {
+        content: "✓";
+        @apply absolute left-0 text-brand-primary font-black;
+    }
+</style>

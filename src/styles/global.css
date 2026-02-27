@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+    --color-brand-primary: #347d76;
+    /* El verde azulado del fondo */
+    --color-brand-accent: #065f46;
+    /* Verde Bosque Profundo y sofisticado */
+    --color-brand-card: #fff6f3;
+    /* El color crema suave de la tarjeta */
+    --color-brand-dark: #1a1a1a;
+    /* Un negro casi puro para máximo contraste */
+}
+
+:root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-outfit: 'Outfit', system-ui, sans-serif;
+}
+
+body {
+    font-family: var(--font-inter);
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+    font-family: var(--font-outfit);
+}

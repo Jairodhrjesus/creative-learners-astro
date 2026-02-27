@@ -1,0 +1,150 @@
+---
+const faqs = [
+    {
+        question: "What ages do you accept at Creative Learners?",
+        answer: "We provide nurturing care and educational support for children from 3 months old through Pre-Kindergarten (up to 5 years old). Our programs are tailored to each specific developmental stage.",
+    },
+    {
+        question: "What are your hours of operation?",
+        answer: "Our center is open Monday through Friday, from 7:00 AM to 6:00 PM, year-round. we even remain open during spring and summer breaks to support working families.",
+    },
+    {
+        question: "Is Creative Learners a licensed child care facility?",
+        answer: "Yes, we are a fully licensed child care center regulated by the California Department of Social Services. Our staff is highly qualified and trained in First Aid, CPR, and preventative health.",
+    },
+    {
+        question: "Are nutritious meals provided for the children?",
+        answer: "Yes! We serve nutritious breakfast and snacks daily to all children enrolled in our programs, ensuring they have the energy they need for a full day of learning and play.",
+    },
+    {
+        question: "What is your educational philosophy?",
+        answer: "Our program is cognitive-based, meaning children learn through active exploration. We integrate academics, play, and performing arts to foster confidence, independence, and a lifelong love for learning.",
+    },
+    {
+        question: "How can I schedule a tour of the facility?",
+        answer: "We'd love to show you around! You can schedule a private tour by visiting our Contact page or calling us directly at (925) 425-9500. Tours are the best way to see our safe, nurturing environment in action.",
+    },
+];
+
+// SEO Schema for FAQPage
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
+---
+
+<section class="py-24 bg-white relative overflow-hidden">
+    {/* Decorative Elements */}
+    <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"
+    >
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span
+                class="text-brand-accent font-black uppercase tracking-[0.2em] text-xs mb-4 block"
+                >Common Questions</span
+            >
+            <h2
+                class="text-4xl md:text-5xl font-black font-heading text-slate-950 mb-6 tracking-tight"
+            >
+                Frequently Asked <span class="text-brand-primary"
+                    >Questions</span
+                >
+            </h2>
+            <p class="text-lg text-slate-600 font-medium">
+                Everything you need to know about our programs, enrollment, and
+                daily life at Creative Learners.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6 items-start">
+            {
+                faqs.map((faq, index) => (
+                    <div class="faq-item group bg-brand-card rounded-[2rem] border border-brand-primary/5 hover:border-brand-primary/10 transition-all">
+                        <button
+                            class="w-full text-left p-8 flex justify-between items-center gap-6 focus:outline-none"
+                            onclick={`
+                                const content = this.nextElementSibling;
+                                const isExpanded = content.classList.contains('active');
+                                
+                                // Reset all others in same column? No, let user open multiple.
+                                content.classList.toggle('active');
+                                this.querySelector('.arrow').classList.toggle('rotate-180');
+                            `}
+                        >
+                            <span class="text-xl font-black text-slate-950 group-hover:text-brand-primary transition-colors leading-tight">
+                                {faq.question}
+                            </span>
+                            <div class="arrow w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm transition-transform duration-500 flex-shrink-0">
+                                <svg
+                                    class="w-4 h-4 text-brand-primary"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="3"
+                                        d="M19 9l-7 7-7-7"
+                                    />
+                                </svg>
+                            </div>
+                        </button>
+
+                        <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                            <div class="overflow-hidden">
+                                <div class="px-8 pb-8 pt-6 border-t border-brand-primary/5 text-slate-600 font-medium text-lg leading-relaxed">
+                                    {faq.answer}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="mt-16 text-center">
+            <p class="text-slate-500 font-medium mb-6">
+                Still have more questions?
+            </p>
+            <a
+                href="/contact"
+                class="inline-flex items-center gap-2 bg-brand-primary text-white px-8 py-4 rounded-full font-black hover:bg-brand-dark transition-all shadow-xl shadow-brand-primary/20"
+            >
+                Contact Our Team
+                <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2.5"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+{/* SEO Schema Injection */}
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<style>
+    .faq-content.active {
+        grid-template-rows: 1fr;
+    }
+</style>

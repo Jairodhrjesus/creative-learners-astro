@@ -1,0 +1,290 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import playground from "../assets/hero-images/playground.jpg";
+import Carousel from "../components/Carousel.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Expectations from "../components/Expectations.astro";
+import Mission from "../components/Mission.astro";
+import ProgramsGrid from "../components/ProgramsGrid.astro";
+import FAQ from "../components/FAQ.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<Layout title="Creative Learners | Premium Daycare & Preschool">
+	<main>
+		{/* HERO SECTION */}
+		<section
+			class="relative min-h-[85vh] md:h-[90vh] md:min-h-[750px] w-full flex items-center py-12 md:py-0"
+		>
+			{/* Background Image Container */}
+			<div class="absolute inset-0 z-0">
+				<Image
+					src={playground}
+					alt="Playground"
+					class="w-full h-full object-cover"
+				/>
+				{/* Tint overlay matching the reference image's atmosphere */}
+				<div class="absolute inset-0 bg-brand-primary/10"></div>
+			</div>
+
+			<div
+				class="container mx-auto px-4 sm:px-6 relative z-10 font-inter"
+			>
+				{/* The Main Shape - Adaptive width and positioning */}
+				<div
+					class="w-full max-w-[540px] bg-brand-primary p-4 sm:p-6 md:p-8 rounded-[2.5rem] shadow-2xl animate-soft-reveal mx-auto md:mx-0"
+				>
+					{/* Internal White/Cream Card - Adaptive padding */}
+					<div
+						class="bg-brand-card p-6 sm:p-8 md:p-12 rounded-[2rem] mb-6 md:mb-8 relative overflow-hidden"
+					>
+						{/* Enrollment Badge */}
+						{/* Enrollment Badge */}
+						<div
+							class="inline-flex items-center gap-3 bg-white border border-brand-accent/10 pl-2 pr-5 py-2 rounded-full shadow-2xl shadow-brand-accent/5 mb-8 group hover:border-brand-accent/30 transition-all duration-500"
+						>
+							<div
+								class="bg-brand-accent rounded-full p-2.5 flex items-center justify-center shadow-lg shadow-brand-accent/20"
+							>
+								<span class="relative flex h-2 w-2">
+									<span
+										class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"
+									></span>
+									<span
+										class="relative inline-flex rounded-full h-2 w-2 bg-white"
+									></span>
+								</span>
+							</div>
+							<span
+								class="text-brand-accent text-[10px] font-black uppercase tracking-[0.2em]"
+							>
+								Now Enrolling for <span class="text-slate-950"
+									>{currentYear}</span
+								>
+							</span>
+						</div>
+
+						<h1
+							class="text-4xl sm:text-5xl md:text-7xl font-black font-heading text-slate-950 leading-[0.95] mb-4 md:mb-6 tracking-tight"
+						>
+							Creative <br />
+							Learners
+						</h1>
+
+						<p
+							class="text-lg sm:text-xl md:text-2xl text-slate-800 font-bold leading-tight"
+						>
+							Child Care, Daycare & Preschool in Pleasanton
+						</p>
+					</div>
+
+					{/* Bottom Info Area - Better mobile spacing */}
+					<div class="px-2 sm:px-4 space-y-6 text-white">
+						<div class="space-y-1">
+							<h2
+								class="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight leading-tight"
+							>
+								4300 Mirador Drive <br
+									class="hidden sm:block"
+								/>
+								Pleasanton, CA 94566
+							</h2>
+							<div class="relative group/tel w-fit">
+								<a
+									href="tel:9252499000"
+									class="text-base md:text-lg font-bold opacity-90 pt-1 md:pt-2 hover:text-brand-card transition-colors block underline decoration-brand-card/30 underline-offset-4"
+								>
+									Telephone: 925-249-9000
+								</a>
+								<div
+									class="absolute bottom-full left-0 mb-4 px-3 py-1.5 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest rounded-lg opacity-0 invisible group-hover/tel:opacity-100 group-hover/tel:visible transition-all transform translate-y-2 group-hover/tel:translate-y-0 whitespace-nowrap z-50 pointer-events-none shadow-xl border border-white/10"
+								>
+									Click to call
+									{/* Tooltip Arrow */}
+									<div
+										class="absolute top-full left-4 border-8 border-transparent border-t-slate-900"
+									>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="pt-2">
+							<p
+								class="font-bold opacity-80 uppercase text-[10px] sm:text-xs tracking-widest mb-1"
+							>
+								We are open Monday – Friday
+							</p>
+							<p class="text-lg md:text-xl font-bold">
+								from 7:00 am – 6:00 pm
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		{/* QUICK INFO BAR */}
+		<section class="bg-white py-12 border-b border-slate-100">
+			<div class="container mx-auto px-6">
+				<div class="flex flex-wrap justify-between items-center gap-8">
+					<div class="flex items-center gap-3 text-brand-primary">
+						<span class="text-3xl font-black">15+</span>
+						<span
+							class="text-sm font-bold opacity-60 uppercase tracking-widest"
+							>Years of <br /> Experience</span
+						>
+					</div>
+					<div class="h-10 w-[1px] bg-slate-100 hidden md:block">
+					</div>
+					<div class="flex items-center gap-3 text-brand-primary">
+						<span class="text-3xl font-black">100%</span>
+						<span
+							class="text-sm font-bold opacity-60 uppercase tracking-widest"
+							>Safe & <br /> Secure</span
+						>
+					</div>
+					<div class="h-10 w-[1px] bg-slate-100 hidden md:block">
+					</div>
+					<div class="flex items-center gap-3 text-brand-primary">
+						<span class="text-3xl font-black">Qualified</span>
+						<span
+							class="text-sm font-bold opacity-60 uppercase tracking-widest"
+							>Teacher <br /> Staff</span
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		{/* WELCOME SECTION */}
+		<section class="py-24 bg-white overflow-hidden">
+			<div class="container mx-auto px-6">
+				<div
+					class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24"
+				>
+					{/* Text Column */}
+					<div class="w-full lg:w-1/2 space-y-8 order-2 lg:order-1">
+						<div class="space-y-4">
+							<h2
+								class="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-slate-950 leading-tight tracking-tight"
+							>
+								Welcome to <span class="text-brand-primary"
+									>Creative Learners</span
+								>
+								<br class="hidden xl:block" /> Child Care <span
+									class="text-slate-300">—</span
+								> Trusted in Pleasanton, CA
+							</h2>
+							<div
+								class="h-1.5 w-24 bg-brand-accent rounded-full"
+							>
+							</div>
+						</div>
+
+						<div
+							class="space-y-6 text-slate-600 text-lg leading-relaxed font-medium"
+						>
+							<p>
+								Creative Learners Child Care is an all day, year
+								round, program that provides nurturing care and
+								educational support for infants through
+								Pre-kindergarten. Our center is designed to be a
+								home away from home for children where they can
+								learn, laugh, grow, and have fun.
+							</p>
+
+							<p>
+								Our program is cognitive based, where young
+								children learn through active exploration in an
+								environment which is rich in opportunities to
+								converse, socialize, work, play and negotiate
+								with others. The classrooms are planned to
+								encourage curiosity, exploration, and problem
+								solving in an atmosphere of warmth, affection
+								and respect for each child. Teachers plan
+								experiences based on children’s interests and
+								appropriate educational concepts.
+							</p>
+
+							<p>
+								We believe in a program that uses academics,
+								play, and enrichment activities to enhance
+								children’s way of thinking. We specialize in
+								Performing arts to raise children’s confidence
+								and independence. We want to work together with
+								our families to create a community of life- long
+								learners, doers, and thinkers.
+							</p>
+
+							<div
+								class="bg-brand-card/50 p-8 rounded-3xl border border-brand-primary/10"
+							>
+								<p class="text-slate-800">
+									Our program is offered year round including
+									spring and summer breaks. We are
+									conveniently located near downtown
+									Pleasanton. Learn more about our program by
+									<a
+										href="/contact"
+										class="text-brand-primary font-bold hover:underline ml-1"
+										>scheduling a tour today!</a
+									>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					{/* Image Column / Carousel */}
+					<div class="w-full lg:w-1/2 order-1 lg:order-2">
+						<div class="relative">
+							<Carousel />
+							{/* Decorative items */}
+							<div
+								class="absolute -top-6 -right-6 w-32 h-32 bg-brand-accent/10 rounded-full blur-3xl -z-10"
+							>
+							</div>
+							<div
+								class="absolute -bottom-10 -left-10 w-48 h-48 bg-brand-primary/5 rounded-full blur-3xl -z-10"
+							>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		{/* PROGRAMS SECTION */}
+		<ProgramsGrid />
+
+		{/* EXPECTATIONS SECTION */}
+		<Expectations />
+
+		{/* MISSION SECTION */}
+		<Mission />
+
+		{/* TESTIMONIALS SECTION */}
+		<Testimonials />
+
+		{/* FAQ SECTION */}
+		<FAQ />
+	</main>
+</Layout>
+
+<style>
+	@keyframes soft-reveal {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	.animate-soft-reveal {
+		animation: soft-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	}
+</style>

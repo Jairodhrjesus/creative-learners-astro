@@ -1,0 +1,220 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+import { Image } from "astro:assets";
+import toddlerImg from "../../assets/hero-images/playground.jpg";
+---
+
+<Layout title="Toddler Program | Creative Learners Child Care">
+    <main class="bg-white">
+        {/* Page Header */}
+        <section
+            class="bg-brand-card py-20 border-b border-brand-primary/5 relative overflow-hidden"
+        >
+            <div class="absolute inset-0 bg-grid-slate-100/[0.5] -z-10"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-3xl">
+                    <span
+                        class="text-brand-accent font-black uppercase tracking-[0.2em] text-xs mb-4 block"
+                        >18 to 36 Months</span
+                    >
+                    <h1
+                        class="text-5xl md:text-7xl font-black font-heading text-slate-950 leading-[0.95] mb-6 tracking-tight"
+                    >
+                        Toddler <span class="text-brand-primary">Program</span>
+                    </h1>
+                    <p class="text-2xl text-slate-700 font-bold leading-tight">
+                        Structured Learning for Active Young Minds
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        {/* Content Section */}
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+                    {/* Main Content Column */}
+                    <div class="lg:col-span-7 space-y-12">
+                        <div
+                            class="space-y-6 text-xl text-slate-600 leading-relaxed font-medium"
+                        >
+                            <p
+                                class="text-2xl text-slate-900 font-bold leading-relaxed"
+                            >
+                                Our toddler program is thoughtfully designed to
+                                harness your child’s natural curiosity. Through
+                                engaging activities and structured routines, we
+                                promote early social, emotional, and motor
+                                skills development.
+                            </p>
+
+                            <div class="h-px w-full bg-slate-100 my-10"></div>
+
+                            <div class="space-y-4">
+                                <h2
+                                    class="text-3xl font-black font-heading text-slate-950"
+                                >
+                                    Nurturing Curiosity and Growth
+                                </h2>
+                                <p>
+                                    At this age, toddlers are full of curiosity
+                                    about the world around them. Our program
+                                    channels this curiosity into
+                                    age-appropriate, playful activities that
+                                    promote learning and discovery while
+                                    building essential skills. We foster an
+                                    environment where toddlers can explore
+                                    safely and develop confidence.
+                                </p>
+                            </div>
+
+                            {/* Featured Image Frame 1 */}
+                            <div class="relative group my-16">
+                                <div
+                                    class="absolute inset-0 bg-brand-primary rounded-[2.5rem] rotate-1 group-hover:rotate-0 transition-transform duration-500 -z-10"
+                                >
+                                </div>
+                                <div
+                                    class="overflow-hidden rounded-[2.5rem] border-4 border-white shadow-2xl"
+                                >
+                                    <Image
+                                        src={toddlerImg}
+                                        alt="Happy children smiling with their teacher in the classroom at Creative Learners Child Care in Pleasanton, CA. Caring staff in our daycare."
+                                        class="w-full h-auto scale-105 group-hover:scale-100 transition-transform duration-1000"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h2
+                                    class="text-3xl font-black font-heading text-slate-950"
+                                >
+                                    Building Social and Emotional Skills
+                                </h2>
+                                <p>
+                                    Through a fun and active learning
+                                    environment, your toddler will develop key
+                                    social and emotional skills, learning to
+                                    interact with peers and build meaningful
+                                    relationships. These interactions are
+                                    fundamental in helping them meet
+                                    developmental milestones.
+                                </p>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h2
+                                    class="text-3xl font-black font-heading text-slate-950"
+                                >
+                                    Developing Structure and Routine
+                                </h2>
+                                <p>
+                                    We gently introduce structured routines that
+                                    include group activities, quiet time, and
+                                    age-appropriate tasks. These routines
+                                    provide security and help toddlers
+                                    transition smoothly to preschool by building
+                                    both large and small motor skills along with
+                                    emotional resilience.
+                                </p>
+                            </div>
+
+                            {/* Featured Image Frame 2 */}
+                            <div class="relative group my-16">
+                                <div
+                                    class="absolute inset-0 bg-brand-primary rounded-[2.5rem] -rotate-1 group-hover:rotate-0 transition-transform duration-500 -z-10"
+                                >
+                                </div>
+                                <div
+                                    class="overflow-hidden rounded-[2.5rem] border-4 border-white shadow-2xl"
+                                >
+                                    <Image
+                                        src={toddlerImg}
+                                        alt="View of a neat and clean classroom at Creative Learners Child Care in Pleasanton, CA. Safe and organized learning environment in our daycare."
+                                        class="w-full h-auto scale-105 group-hover:scale-100 transition-transform duration-1000"
+                                    />
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-brand-card p-10 rounded-[2.5rem] border border-brand-primary/10 space-y-4"
+                            >
+                                <h2
+                                    class="text-3xl font-black font-heading text-slate-950"
+                                >
+                                    Support for Developmental Milestones
+                                </h2>
+                                <p class="text-slate-800">
+                                    Our program focuses on supporting every
+                                    stage of your toddler’s growth, from
+                                    refining motor skills to enhancing social
+                                    and cognitive abilities. We ensure that each
+                                    child receives the guidance they need to
+                                    thrive.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Sidebar Column (Sticky) */}
+                    <aside class="lg:col-span-5 sticky top-32">
+                        <ContactForm />
+
+                        <div
+                            class="mt-8 p-8 bg-slate-50 rounded-[2rem] border border-slate-100"
+                        >
+                            <h4
+                                class="text-lg font-black text-slate-950 mb-6 uppercase tracking-wider text-center"
+                            >
+                                Toddler Program Facts
+                            </h4>
+                            <ul class="space-y-4">
+                                <li
+                                    class="flex items-center gap-3 font-bold text-slate-600"
+                                >
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center"
+                                    >
+                                        ✓
+                                    </div>
+                                    Social Skills Integration
+                                </li>
+                                <li
+                                    class="flex items-center gap-3 font-bold text-slate-600"
+                                >
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center"
+                                    >
+                                        ✓
+                                    </div>
+                                    Motor Skill Development
+                                </li>
+                                <li
+                                    class="flex items-center gap-3 font-bold text-slate-600"
+                                >
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center"
+                                    >
+                                        ✓
+                                    </div>
+                                    Structured Daily Routines
+                                </li>
+                                <li
+                                    class="flex items-center gap-3 font-bold text-slate-600"
+                                >
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center"
+                                    >
+                                        ✓
+                                    </div>
+                                    Safe & Active Play Areas
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>

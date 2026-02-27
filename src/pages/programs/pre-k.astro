@@ -1,0 +1,206 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+import { Image } from "astro:assets";
+import prekImg from "../../assets/hero-images/playground.jpg";
+---
+
+<Layout title="Pre-Kindergarten Program | Creative Learners Child Care">
+    <main class="bg-white">
+        {/* Page Header */}
+        <section
+            class="bg-brand-card py-20 border-b border-brand-primary/5 relative overflow-hidden"
+        >
+            <div class="absolute inset-0 bg-grid-slate-100/[0.5] -z-10"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-3xl">
+                    <span
+                        class="text-brand-accent font-black uppercase tracking-[0.2em] text-xs mb-4 block"
+                        >4 to 5 Years</span
+                    >
+                    <h1
+                        class="text-5xl md:text-7xl font-black font-heading text-slate-950 leading-[0.95] mb-6 tracking-tight"
+                    >
+                        Pre-Kindergarten <span class="text-brand-primary"
+                            >Program</span
+                        >
+                    </h1>
+                    <p class="text-2xl text-slate-700 font-bold leading-tight">
+                        Preparing Young Minds for Kindergarten Success
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        {/* Content Section */}
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+                    {/* Main Content Column */}
+                    <div class="lg:col-span-7 space-y-12">
+                        <div
+                            class="space-y-6 text-xl text-slate-600 leading-relaxed font-medium"
+                        >
+                            <p
+                                class="text-2xl text-slate-900 font-bold leading-relaxed"
+                            >
+                                Our Pre-Kindergarten Program at Creative
+                                Learners is specifically designed to help
+                                children develop the skills necessary for a
+                                successful transition to kindergarten.
+                            </p>
+
+                            <div class="h-px w-full bg-slate-100 my-10"></div>
+
+                            <div class="space-y-4">
+                                <h2
+                                    class="text-3xl font-black font-heading text-slate-950"
+                                >
+                                    Cooperative Play and Problem-Solving
+                                </h2>
+                                <p>
+                                    Through age-appropriate lesson plans, we
+                                    promote cooperative play and collaborative
+                                    problem-solving skills. These experiences
+                                    not only enhance social interactions but
+                                    also encourage children to work together,
+                                    share ideas, and develop essential
+                                    communication skills.
+                                </p>
+                            </div>
+
+                            {/* Featured Image Frame */}
+                            <div class="relative group my-16">
+                                <div
+                                    class="absolute inset-0 bg-brand-primary rounded-[2.5rem] rotate-1 group-hover:rotate-0 transition-transform duration-500 -z-10"
+                                >
+                                </div>
+                                <div
+                                    class="overflow-hidden rounded-[2.5rem] border-4 border-white shadow-2xl"
+                                >
+                                    <Image
+                                        src={prekImg}
+                                        alt="Pre-Kindergarten students collaborating on a project in our classroom at Creative Learners Child Care in Pleasanton, CA."
+                                        class="w-full h-auto scale-105 group-hover:scale-100 transition-transform duration-1000"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h2
+                                    class="text-3xl font-black font-heading text-slate-950"
+                                >
+                                    Balanced Curriculum
+                                </h2>
+                                <p>
+                                    Our curriculum offers an ideal balance
+                                    between hands-on learning through
+                                    child-directed experimentation and more
+                                    structured, teacher-guided academic
+                                    activities. This dual approach allows
+                                    children to explore their interests while
+                                    also engaging in focused learning, helping
+                                    them grasp foundational concepts in a fun
+                                    and engaging way.
+                                </p>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h2
+                                    class="text-3xl font-black font-heading text-slate-950"
+                                >
+                                    Parent Collaboration
+                                </h2>
+                                <p>
+                                    At Creative Learners, we strive to work
+                                    closely with parents to prepare both
+                                    children and families for what to expect in
+                                    kindergarten. We provide resources and
+                                    guidance, ensuring that parents feel
+                                    confident and informed about this important
+                                    transition.
+                                </p>
+                            </div>
+
+                            <div
+                                class="bg-brand-card p-10 rounded-[2.5rem] border border-brand-primary/10 space-y-4"
+                            >
+                                <h2
+                                    class="text-3xl font-black font-heading text-slate-950"
+                                >
+                                    Continuous Development
+                                </h2>
+                                <p class="text-slate-800">
+                                    By nurturing curiosity and providing a
+                                    supportive environment, our Pre-Kindergarten
+                                    Program aims to develop well-rounded
+                                    individuals who are excited about learning.
+                                    We believe that with the right preparation,
+                                    children will thrive in their upcoming
+                                    educational journey.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Sidebar Column (Sticky) */}
+                    <aside class="lg:col-span-5 sticky top-32">
+                        <ContactForm />
+
+                        <div
+                            class="mt-8 p-8 bg-slate-50 rounded-[2rem] border border-slate-100"
+                        >
+                            <h4
+                                class="text-lg font-black text-slate-950 mb-6 uppercase tracking-wider text-center"
+                            >
+                                Pre-K Success Facts
+                            </h4>
+                            <ul class="space-y-4">
+                                <li
+                                    class="flex items-center gap-3 font-bold text-slate-600"
+                                >
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center"
+                                    >
+                                        ✓
+                                    </div>
+                                    Kindergarten Readiness Focus
+                                </li>
+                                <li
+                                    class="flex items-center gap-3 font-bold text-slate-600"
+                                >
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center"
+                                    >
+                                        ✓
+                                    </div>
+                                    Collaborative Problem Solving
+                                </li>
+                                <li
+                                    class="flex items-center gap-3 font-bold text-slate-600"
+                                >
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center"
+                                    >
+                                        ✓
+                                    </div>
+                                    Academic & Social Balance
+                                </li>
+                                <li
+                                    class="flex items-center gap-3 font-bold text-slate-600"
+                                >
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center"
+                                    >
+                                        ✓
+                                    </div>
+                                    Transition Support for Families
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
