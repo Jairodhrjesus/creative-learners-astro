@@ -2,7 +2,7 @@
 title: 'Preschool Enrollment in Pleasanton: Why Creative Learners is the Ideal Choice'
 description: 'If you’re considering enrolling your child in preschool in Pleasanton, CA, Creative Learners offers a nurturing and engaging environment for young minds.'
 pubDate: '2024-11-07'
-heroImage: '/playground.jpg'
+heroImage: '/hero-3.jpg'
 ---
 
 If you’re considering enrolling your child in preschool in Pleasanton, CA, Creative Learners offers a nurturing and engaging environment for young minds. Located at 4300 Mirador Dr, Pleasanton, CA 94566, we provide a comprehensive preschool program that emphasizes hands-on learning, creativity, and early childhood development.

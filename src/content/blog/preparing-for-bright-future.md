@@ -2,7 +2,7 @@
 title: 'Preparing Your Child for a Bright Future at Creative Learners'
 description: 'At Creative Learners, we believe that every child deserves a nurturing, stimulating environment where they can grow, explore, and develop the skills they need for a successful future.'
 pubDate: '2026-02-27'
-heroImage: '/playground.jpg'
+heroImage: '/hero-3.jpg'
 ---
 
 At Creative Learners, we believe that every child deserves a nurturing, stimulating environment where they can grow, explore, and develop the skills they need for a successful future. Our programs are carefully designed to support children from infancy through pre-kindergarten, offering an educational experience that combines learning, care, and fun.

@@ -2,7 +2,7 @@
 title: 'Affordable Preschool in Pleasanton: Quality Education at Creative Learners'
 description: 'Finding an affordable preschool in Pleasanton, CA that doesn’t compromise on quality can be challenging. At Creative Learners, we provide a high-quality preschool program.'
 pubDate: '2024-11-07'
-heroImage: '/playground.jpg'
+heroImage: '/hero-3.jpg'
 ---
 
 Finding an affordable preschool in Pleasanton, CA that doesn’t compromise on quality can be challenging. However, at Creative Learners, we provide a high-quality preschool program designed to nurture your child’s growth while staying within your budget. Located at 4300 Mirador Dr, Pleasanton, CA 94566, we offer an enriching environment that supports both academic and emotional development without the high price tag.

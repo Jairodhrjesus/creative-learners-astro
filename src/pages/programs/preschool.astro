@@ -2,7 +2,9 @@
 import Layout from "../../layouts/Layout.astro";
 import ContactForm from "../../components/ContactForm.astro";
 import { Image } from "astro:assets";
-import preschoolImg from "../../assets/hero-images/playground.jpg";
+import img1 from "../../assets/gallery/gallery-5.jpg";
+import img2 from "../../assets/gallery/gallery-6.jpg";
+import img3 from "../../assets/hero-images/hero-2.webp";
 ---
 
 <Layout title="Preschool Program | Creative Learners Child Care">
@@ -80,8 +82,8 @@ import preschoolImg from "../../assets/hero-images/playground.jpg";
                                     class="overflow-hidden rounded-[2.5rem] border-4 border-white shadow-2xl"
                                 >
                                     <Image
-                                        src={preschoolImg}
-                                        alt="Children engaged in creative learning activities in our preschool classroom at Creative Learners Child Care in Pleasanton, CA."
+                                        src={img1}
+                                        alt="Preschool activities at Creative Learners"
                                         class="w-full h-auto scale-105 group-hover:scale-100 transition-transform duration-1000"
                                     />
                                 </div>
@@ -103,6 +105,23 @@ import preschoolImg from "../../assets/hero-images/playground.jpg";
                                     their fullest potential during these crucial
                                     early years.
                                 </p>
+                            </div>
+
+                            {/* Second Featured Image */}
+                            <div class="relative group my-16">
+                                <div
+                                    class="absolute inset-0 bg-brand-accent rounded-[2.5rem] -rotate-1 group-hover:rotate-0 transition-transform duration-500 -z-10"
+                                >
+                                </div>
+                                <div
+                                    class="overflow-hidden rounded-[2.5rem] border-4 border-white shadow-2xl"
+                                >
+                                    <Image
+                                        src={img2}
+                                        alt="Preschool classroom activities"
+                                        class="w-full h-auto scale-105 group-hover:scale-100 transition-transform duration-1000"
+                                    />
+                                </div>
                             </div>
 
                             <div

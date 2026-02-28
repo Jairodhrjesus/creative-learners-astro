@@ -1,28 +1,53 @@
 ---
+import { Image } from "astro:assets";
+import slide1 from "../assets/carousel-images/slide-1.jpg";
+import slide2 from "../assets/carousel-images/slide-2.jpg";
+import slide3 from "../assets/carousel-images/slide-3.jpg";
+
 const images = [
-    {
-        src: "/src/assets/hero-images/playground.jpg",
-        alt: "Creative Learners Playground",
-    },
-    // Agregaremos más aquí cuando el usuario las suba
+    { src: slide1, alt: "Creative Learners - Daily Activity 1" },
+    { src: slide2, alt: "Creative Learners - Daily Activity 2" },
+    { src: slide3, alt: "Creative Learners - Daily Activity 3" },
 ];
 ---
 
 <div
-    class="relative w-full overflow-hidden rounded-[2.5rem] shadow-2xl group border-4 border-white aspect-[4/3] md:aspect-square lg:aspect-[4/5]"
+    class="relative w-full overflow-hidden rounded-[2.5rem] shadow-2xl group border-4 border-white aspect-[4/3] md:aspect-square lg:aspect-[4/5] cursor-pointer"
 >
     <div
-        class="flex transition-transform duration-500 ease-out h-full"
+        class="flex transition-transform duration-700 ease-in-out h-full"
         id="carousel-track"
     >
         {
-            images.map((img) => (
-                <div class="min-w-full h-full relative">
-                    <img
+            images.map((img, index) => (
+                <div
+                    class="min-w-full h-full relative carousel-slide"
+                    data-index={index}
+                >
+                    <Image
                         src={img.src}
                         alt={img.alt}
-                        class="w-full h-full object-cover"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    {/* Click Indicator */}
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/10">
+                        <div class="bg-white/20 backdrop-blur-md p-4 rounded-full border border-white/30">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-8 h-8 text-white"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                                />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             ))
         }
@@ -34,12 +59,124 @@ const images = [
     >
     </div>
 
-    {
-        /* Navigation Dots (Simple for now since there's only one we know of, but ready for more) */
-    }
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        <div class="w-3 h-3 rounded-full bg-white shadow-lg"></div>
-        <div class="w-3 h-3 rounded-full bg-white/40 shadow-lg"></div>
-        <div class="w-3 h-3 rounded-full bg-white/40 shadow-lg"></div>
+    {/* Navigation Dots */}
+    <div
+        class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10"
+        id="carousel-dots"
+    >
+        {
+            images.map((_, i) => (
+                <div
+                    class={`w-3 h-3 rounded-full shadow-lg transition-colors duration-300 ${i === 0 ? "bg-white" : "bg-white/40"}`}
+                    data-index={i}
+                />
+            ))
+        }
     </div>
 </div>
+
+{/* Lightbox / Fullscreen Modal */}
+<div
+    id="lightbox"
+    class="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 flex items-center justify-center p-4 md:p-8"
+>
+    <button
+        id="close-lightbox"
+        class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-50"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-10 h-10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
+    <div
+        class="relative max-w-6xl w-full h-full flex items-center justify-center"
+    >
+        <img
+            id="lightbox-img"
+            src=""
+            alt=""
+            class="max-w-full max-h-full object-contain rounded-xl shadow-2xl transform scale-95 transition-transform duration-300"
+        />
+    </div>
+</div>
+
+<script>
+    const track = document.getElementById("carousel-track");
+    const dots = document.querySelectorAll("#carousel-dots > div");
+    const slides = document.querySelectorAll(".carousel-slide");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById(
+        "lightbox-img",
+    ) as HTMLImageElement;
+    const closeLightbox = document.getElementById("close-lightbox");
+
+    let currentIndex = 0;
+    const totalSlides = dots.length;
+    let isPaused = false;
+
+    function moveCarousel(index: number) {
+        if (!track) return;
+        track.style.transform = `translateX(-${index * 100}%)`;
+
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.remove("bg-white/40");
+                dot.classList.add("bg-white");
+            } else {
+                dot.classList.remove("bg-white");
+                dot.classList.add("bg-white/40");
+            }
+        });
+    }
+
+    function nextSlide() {
+        if (isPaused) return;
+        currentIndex = (currentIndex + 1) % totalSlides;
+        moveCarousel(currentIndex);
+    }
+
+    // Lightbox Logic
+    slides.forEach((slide) => {
+        slide.addEventListener("click", () => {
+            const img = slide.querySelector("img");
+            if (img && lightbox && lightboxImg) {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.remove("opacity-0", "invisible");
+                setTimeout(() => lightboxImg.classList.remove("scale-95"), 10);
+                isPaused = true;
+                document.body.style.overflow = "hidden"; // Prevent scroll
+            }
+        });
+    });
+
+    function hideLightbox() {
+        if (lightbox && lightboxImg) {
+            lightboxImg.classList.add("scale-95");
+            lightbox.classList.add("opacity-0", "invisible");
+            isPaused = false;
+            document.body.style.overflow = "";
+        }
+    }
+
+    closeLightbox?.addEventListener("click", hideLightbox);
+    lightbox?.addEventListener("click", (e) => {
+        if (e.target === lightbox) hideLightbox();
+    });
+
+    // Auto-slide
+    if (totalSlides > 1) {
+        setInterval(nextSlide, 4000);
+    }
+</script>

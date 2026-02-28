@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import hero1 from "../assets/hero-images/hero-1.webp";
+import hero2 from "../assets/hero-images/hero-2.webp";
+import hero3 from "../assets/hero-images/hero-3.jpg";
+
+const images = [
+    { src: hero1, alt: "Creative Learners Instalaciones" },
+    { src: hero2, alt: "Creative Learners Park" },
+    { src: hero3, alt: "Creative Learners Playground" },
+];
+---
+
+<div class="absolute inset-0 z-0 overflow-hidden">
+    <div id="hero-carousel" class="relative w-full h-full">
+        {
+            images.map((img, index) => (
+                <div
+                    class={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === 0 ? "opacity-100" : "opacity-0"}`}
+                    data-index={index}
+                >
+                    <Image
+                        src={img.src}
+                        alt={img.alt}
+                        class="w-full h-full object-cover"
+                        loading={index === 0 ? "eager" : "lazy"}
+                    />
+                </div>
+            ))
+        }
+        {/* Tint overlay matching the reference image's atmosphere */}
+        <div class="absolute inset-0 bg-brand-primary/10"></div>
+    </div>
+</div>
+
+<script>
+    const slides = document.querySelectorAll(
+        "#hero-carousel > div[data-index]",
+    );
+    let currentSlide = 0;
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove("opacity-100");
+        slides[currentSlide].classList.add("opacity-0");
+
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        slides[currentSlide].classList.remove("opacity-0");
+        slides[currentSlide].classList.add("opacity-100");
+    }
+
+    if (slides.length > 1) {
+        setInterval(nextSlide, 5000);
+    }
+</script>

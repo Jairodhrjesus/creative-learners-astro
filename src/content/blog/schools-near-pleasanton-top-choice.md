@@ -2,7 +2,7 @@
 title: 'Schools Near Pleasanton, CA: Creative Learners, A Top Educational Choice'
 description: 'Located in the heart of Pleasanton, CA, Creative Learners has become a standout choice for families seeking quality education in a nurturing environment.'
 pubDate: '2024-11-06'
-heroImage: '/playground.jpg'
+heroImage: '/hero-3.jpg'
 ---
 
 Located in the heart of Pleasanton, CA, Creative Learners has become a standout choice for families seeking quality education in an environment that fosters creative learning and holistic child development. Our central location in Pleasanton offers easy access for parents, surrounded by a safe and enriching atmosphere ideal for children’s growth.

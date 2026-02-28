@@ -2,7 +2,7 @@
 title: 'Exploring Childcare Options in Pleasanton'
 description: 'Choosing the right childcare option is a crucial decision for families in Pleasanton. This guide provides an overview of the childcare landscape in Pleasanton, helping you make an informed decision.'
 pubDate: '2024-11-09'
-heroImage: '/playground.jpg'
+heroImage: '/hero-3.jpg'
 ---
 
 Choosing the right childcare option is a crucial decision for families in Pleasanton. It’s about finding a safe, nurturing environment that supports your child’s growth and development.
