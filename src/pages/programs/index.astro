@@ -127,7 +127,7 @@ const programs = [
                                         <Image
                                             src={p.image}
                                             alt={p.name}
-                                            class="w-full aspect-[4/3] object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
+                                            class="w-full aspect-4/3 object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
                                         />
                                         <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                                     </div>
@@ -158,7 +158,7 @@ const programs = [
                                         {p.features.map((feature) => (
                                             <div class="flex items-center gap-3">
                                                 <div
-                                                    class={`w-6 h-6 rounded-full ${p.color} ${p.text} flex items-center justify-center flex-shrink-0`}
+                                                    class={`w-6 h-6 rounded-full ${p.color} ${p.text} flex items-center justify-center shrink-0`}
                                                 >
                                                     <svg
                                                         class="w-3.5 h-3.5"
