@@ -23,8 +23,8 @@ export const server = {
             const { name, email, phone, program, message } = input;
 
             const { data, error } = await resend.emails.send({
-                from: 'Creative Learners <onboarding@resend.dev>', // Resend default for testing, user should update this for production
-                to: ['cpbeltran16@gmail.com'], // User should verify this or put their desired recipient here
+                from: 'Creative Learners <onboarding@resend.dev>',
+                to: ['creativelearnerschildcare@gmail.com'],
                 subject: `New Contact Form Submission from ${name}`,
                 html: `
           <h1>New Contact Request</h1>
